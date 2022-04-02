@@ -21,3 +21,5 @@ Route::get('/', function () {
 
 Route::resource('formpayment', FormPaymentController::class);
 Route::resource('conditionpayment', ConditionPaymentController::class);
+
+Route::get('getall/formpayment', [FormPaymentController::class, 'getAll'])->name('formpayment.getall');

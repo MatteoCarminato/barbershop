@@ -103,4 +103,9 @@ class FormPaymentController extends Controller
     {
         //
     }
+
+    public function getAll(){
+        return FormPayment::all();
+    }
+
 }

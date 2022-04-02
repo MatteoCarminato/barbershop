@@ -56,6 +56,7 @@ class ConditionPaymentController extends Controller
      */
     public function store(StoreConditionPaymentRequest $request)
     {
+        dd($request->all());
         ConditionPayment::create($request->validated());
         return to_route('conditionpayment.index');
     }
