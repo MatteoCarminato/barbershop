@@ -56,6 +56,27 @@ class ConditionPaymentController extends Controller
      */
     public function store(StoreConditionPaymentRequest $request)
     {
+        $data = $request->all();
+
+        $condition_payment['name'] = $data['name'];
+        $condition_payment['fees'] = $data['fees'];
+        $condition_payment['assessment'] = $data['assessment'];
+        $condition_payment['discount'] = $data['discount'];
+        $condition_payment['installment_amount'] = $data['installment_amount'];
+
+//      ConditionPayment::create($condition_paymenyt);
+        for ($k = 1; $k <= $condition_payment['installment_amount']; $k++) {
+            $condition_payment_dails = [
+                'installments' => $data['installments' . $k],
+                'number_days' => $data['number_days' . $k],
+                'percentage' => $data['percentage' . $k],
+                'form_payment' => $data['form_payment' . $k],
+            ];
+
+            //MODEL PARA INSERÇÃO NO BANCO DE DADOS installments
+        }
+        dd($request->all());
+        dd($condition_paymenyt);
         dd($request->all());
         ConditionPayment::create($request->validated());
         return to_route('conditionpayment.index');

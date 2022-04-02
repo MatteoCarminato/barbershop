@@ -169,14 +169,15 @@
                     '<div class="col-xs-12 col-sm-4">' +
                     '<div class="form-group">' +
                     '<label for="raca_id">Forma de Pagamento:</label>' +
-                    '<select id="raca_id' + counter + '" name="raca_id' + counter +
-                    '" class="select2 form-select" placeholder="Selecione">';
+                    '<select id="raca_id' + counter + '" name="form_payment' + counter +
+                    '" class="select2 form-select">';
                         for (var i = 0; i < formpayment.length; i++) {
                             html += '<option value ="' + formpayment[i].id + '">' + formpayment[i].name + '</option >';
                         }
                 html += '</select>' +
                     '</div></div>' +
                     '<div class="col-xs-12 col-sm-1">' +
+                    '<label></label>' +
                     '<button type="button" class="remover btn btn-danger waves-effect waves-float waves-light" id="rm' +
                     counter + '" data-counter="' + counter + '">Remover</button>' +
                     '</div>'
@@ -184,6 +185,14 @@
                 '</div>';
                 $("#lstPets").append(html);
                 $("#count").val(counter);
+                calcQntParcelas();
+            });
+
+            $(document).on('click', 'button.remover', function () {
+                let index = $(this).data("counter");
+                let row = "#row_" + index;
+                $(row).remove();
+                counter--;
                 calcQntParcelas();
             });
 

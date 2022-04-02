@@ -19,4 +19,9 @@ class FormPayment extends Model
         'name',
         'id'
     ];
+
+    public function conditionPayments()
+    {
+        return $this->belongsToMany(ConditionPayment::class);
+    }
 }
