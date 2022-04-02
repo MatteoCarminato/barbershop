@@ -91,78 +91,85 @@
                                             </div>
                                             <div class="card-body">
                                                 <form action="#" class="invoice-repeater">
-                                                    <div data-repeater-list="invoice">
-                                                        <div data-repeater-item>
-                                                            <div class="row d-flex align-items-end">
-                                                                <div class="col-md-4 col-12">
-                                                                    <div class="mb-1">
-                                                                        <label class="form-label" for="itemname">Numero
-                                                                            Parcela</label>
-                                                                        <input type="text" class="form-control"
-                                                                               id="installments" name="installments"
-                                                                               aria-describedby="itemname"
-                                                                               placeholder="1º"/>
-                                                                    </div>
-                                                                </div>
+{{--                                                    <div data-repeater-list="invoice">--}}
+{{--                                                        <div data-repeater-item>--}}
+{{--                                                            <div class="row d-flex align-items-end">--}}
+{{--                                                                <div class="col-md-4 col-12">--}}
+{{--                                                                    <div class="mb-1">--}}
+{{--                                                                        <label class="form-label" for="itemname">Numero--}}
+{{--                                                                            Parcela</label>--}}
+{{--                                                                        <input type="text" class="form-control"--}}
+{{--                                                                               id="installments" name="installments"--}}
+{{--                                                                               aria-describedby="itemname"--}}
+{{--                                                                               placeholder="1º"/>--}}
+{{--                                                                    </div>--}}
+{{--                                                                </div>--}}
 
-                                                                <div class="col-md-2 col-12">
-                                                                    <div class="mb-1">
-                                                                        <label class="form-label"
-                                                                               for="itemcost">Prazo em dias</label>
-                                                                        <input type="number" class="form-control"
-                                                                               id="itemcost" aria-describedby="itemcost"
-                                                                               placeholder="32"/>
-                                                                    </div>
-                                                                </div>
+{{--                                                                <div class="col-md-2 col-12">--}}
+{{--                                                                    <div class="mb-1">--}}
+{{--                                                                        <label class="form-label"--}}
+{{--                                                                               for="itemcost">Prazo em dias</label>--}}
+{{--                                                                        <input type="number" class="form-control"--}}
+{{--                                                                               id="itemcost" aria-describedby="itemcost"--}}
+{{--                                                                               placeholder="32"/>--}}
+{{--                                                                    </div>--}}
+{{--                                                                </div>--}}
 
-                                                                <div class="col-md-2 col-12">
-                                                                    <div class="mb-1">
-                                                                        <label class="form-label" for="itemquantity">Porcentagem</label>
-                                                                        <div class="input-group">
-                                                                            <input type="number" id="discount"
-                                                                                   name="discount"
-                                                                                   class="form-control">
-                                                                            <span class="input-group-text">%</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
+{{--                                                                <div class="col-md-2 col-12">--}}
+{{--                                                                    <div class="mb-1">--}}
+{{--                                                                        <label class="form-label" for="itemquantity">Porcentagem</label>--}}
+{{--                                                                        <div class="input-group">--}}
+{{--                                                                            <input type="number" id="discount"--}}
+{{--                                                                                   name="discount"--}}
+{{--                                                                                   class="form-control">--}}
+{{--                                                                            <span class="input-group-text">%</span>--}}
+{{--                                                                        </div>--}}
+{{--                                                                    </div>--}}
+{{--                                                                </div>--}}
 
-                                                                <div class="col-md-2 col-12">
-                                                                    <div class="mb-1">
-                                                                        <label class="form-label"
-                                                                               for="staticprice">Forma de
-                                                                            Pagamento</label>
-                                                                        <select class="select2 form-select"
-                                                                                id="select2-basic">
-                                                                            @foreach ($forms_payment as $form_payment)
-                                                                                <option
-                                                                                    value="{{$form_payment->id}}">{{$form_payment->name}}</option>
-                                                                            @endforeach
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
+{{--                                                                <div class="col-md-2 col-12">--}}
+{{--                                                                    <div class="mb-1">--}}
+{{--                                                                        <label class="form-label"--}}
+{{--                                                                               for="staticprice">Forma de--}}
+{{--                                                                            Pagamento</label>--}}
+{{--                                                                        <select class="select2 form-select"--}}
+{{--                                                                                id="select2-basic">--}}
+{{--                                                                            @foreach ($forms_payment as $form_payment)--}}
+{{--                                                                                <option--}}
+{{--                                                                                    value="{{$form_payment->id}}">{{$form_payment->name}}</option>--}}
+{{--                                                                            @endforeach--}}
+{{--                                                                        </select>--}}
+{{--                                                                    </div>--}}
+{{--                                                                </div>--}}
 
-                                                                <div class="col-md-2 col-12 mb-50">
-                                                                    <div class="mb-1">
-                                                                        <button
-                                                                            class="btn btn-outline-danger text-nowrap px-1"
-                                                                            data-repeater-delete type="button">
-                                                                            <i data-feather="x" class="me-25"></i>
-                                                                            <span>Delete</span>
-                                                                        </button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <hr/>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-12">
+{{--                                                                <div class="col-md-2 col-12 mb-50">--}}
+{{--                                                                    <div class="mb-1">--}}
+{{--                                                                        <button--}}
+{{--                                                                            class="btn btn-outline-danger text-nowrap px-1"--}}
+{{--                                                                            data-repeater-delete type="button">--}}
+{{--                                                                            <i data-feather="x" class="me-25"></i>--}}
+{{--                                                                            <span>Delete</span>--}}
+{{--                                                                        </button>--}}
+{{--                                                                    </div>--}}
+{{--                                                                </div>--}}
+{{--                                                            </div>--}}
+{{--                                                            <hr/>--}}
+{{--                                                        </div>--}}
+{{--                                                    </div>--}}
+                                                    <div class="row justify-content-between">
+                                                        <div class="col-auto mr-auto">
                                                             <button class="btn btn-icon btn-primary" type="button"
-                                                                    data-repeater-create>
+                                                                    name="add" id="add">
                                                                 <i data-feather="plus" class="me-25"></i>
                                                                 <span>Adicionar Parcela</span>
                                                             </button>
+
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <button class="btn btn-icon btn-success" type="submit">
+                                                                <span>Cadastrar</span>
+                                                            </button>
+
                                                         </div>
                                                     </div>
                                                 </form>
