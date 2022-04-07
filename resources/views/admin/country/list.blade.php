@@ -12,7 +12,7 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">Listagem Condição de Pagamento</h4>
+                                    <h4 class="card-title">Listagem Paises</h4>
                                 </div>
                                 <div class="card-body">
                                     <div class="container">
@@ -21,6 +21,8 @@
                                             <tr>
                                                 <th width="10px">No</th>
                                                 <th>Nome</th>
+                                                <th>Sigla</th>
+                                                <th>DDD</th>
                                                 <th width="100px">Ação</th>
                                             </tr>
                                             </thead>
@@ -47,10 +49,12 @@
                 },
                 processing: true,
                 serverSide: true,
-                ajax: "{{ route('conditionpayment.index') }}",
+                ajax: "{{ route('country.index') }}",
                 columns: [
                     {data: 'id', name: 'id'},
                     {data: 'name', name: 'name'},
+                    {data: 'acronym', name: 'acronym'},
+                    {data: 'DDD', name: 'DDD'},
                     {data: 'action', name: 'action', orderable: false, searchable: false},
                 ]
             });

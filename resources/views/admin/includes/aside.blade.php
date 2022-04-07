@@ -76,6 +76,19 @@
             </ul>
         </li>
 
+        <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="file-text"></i><span
+                    class="menu-title text-truncate" data-i18n="Condição de Pagamento">CEP</span></a>
+            <ul class="menu-content">
+                <li><a class="d-flex align-items-center" href="{{route('country.create')}}"><i
+                            data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Cadastrar">Cadastrar País</span></a>
+                </li>
+                <li><a class="d-flex align-items-center" href="{{route('country.index')}}"><i
+                            data-feather="circle"></i><span class="menu-item text-truncate"
+                                                            data-i18n="Listar">Listar Países</span></a>
+                </li>
+            </ul>
+        </li>
+
 {{--        <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="file-text"></i><span--}}
 {{--                    class="menu-title text-truncate" data-i18n="Motorista">Motorista</span></a>--}}
 {{--            <ul class="menu-content">--}}

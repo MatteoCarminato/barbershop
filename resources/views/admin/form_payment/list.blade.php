@@ -20,8 +20,8 @@
                                             <thead>
                                             <tr>
                                                 <th width="10px">No</th>
-                                                <th>Name</th>
-                                                <th width="100px">Action</th>
+                                                <th>Nome</th>
+                                                <th width="100px">Ação</th>
                                             </tr>
                                             </thead>
                                             <tbody>
