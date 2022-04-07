@@ -3,6 +3,7 @@
 use App\Http\Controllers\ConditionPaymentController;
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\FormPaymentController;
+use App\Http\Controllers\StateController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,6 +24,7 @@ Route::get('/', function () {
 Route::resource('formpayment', FormPaymentController::class);
 Route::resource('conditionpayment', ConditionPaymentController::class);
 Route::resource('country', CountryController::class);
+Route::resource('state', StateController::class);
 
 
 Route::get('getall/formpayment', [FormPaymentController::class, 'getAll'])->name('formpayment.getall');

@@ -87,6 +87,15 @@
                                                             data-i18n="Listar">Listar Países</span></a>
                 </li>
             </ul>
+            <ul class="menu-content">
+                <li><a class="d-flex align-items-center" href="{{route('state.create')}}"><i
+                            data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Cadastrar">Cadastrar Estado</span></a>
+                </li>
+                <li><a class="d-flex align-items-center" href="{{route('state.index')}}"><i
+                            data-feather="circle"></i><span class="menu-item text-truncate"
+                                                            data-i18n="Listar">Listar Estado</span></a>
+                </li>
+            </ul>
         </li>
 
 {{--        <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="file-text"></i><span--}}
