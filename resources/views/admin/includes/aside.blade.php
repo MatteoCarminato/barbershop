@@ -96,6 +96,15 @@
                                                             data-i18n="Listar">Listar Estado</span></a>
                 </li>
             </ul>
+            <ul class="menu-content">
+                <li><a class="d-flex align-items-center" href="{{route('city.create')}}"><i
+                            data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Cadastrar">Cadastrar Cidade</span></a>
+                </li>
+                <li><a class="d-flex align-items-center" href="{{route('city.index')}}"><i
+                            data-feather="circle"></i><span class="menu-item text-truncate"
+                                                            data-i18n="Listar">Listar Cidade</span></a>
+                </li>
+            </ul>
         </li>
 
 {{--        <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="file-text"></i><span--}}

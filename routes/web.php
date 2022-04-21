@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CityController;
 use App\Http\Controllers\ConditionPaymentController;
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\FormPaymentController;
@@ -25,6 +26,7 @@ Route::resource('formpayment', FormPaymentController::class);
 Route::resource('conditionpayment', ConditionPaymentController::class);
 Route::resource('country', CountryController::class);
 Route::resource('state', StateController::class);
+Route::resource('city', CityController::class);
 
 
 Route::get('getall/formpayment', [FormPaymentController::class, 'getAll'])->name('formpayment.getall');

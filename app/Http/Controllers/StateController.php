@@ -53,7 +53,7 @@ class StateController extends Controller
     public function store(StoreStateRequest $request)
     {
         State::create($request->validated());
-        return to_route('admin.state.index');
+        return to_route('state.index');
     }
 
     /**

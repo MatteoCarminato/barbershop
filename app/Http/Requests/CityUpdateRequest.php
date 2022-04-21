@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreStateRequest extends FormRequest
+class CityUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,8 +25,8 @@ class StoreStateRequest extends FormRequest
     {
         return [
             'name' => ['required', 'max:255', 'string'],
-            'acronym' => ['required', 'max:255', 'string'],
-            'country_id' => ['required', 'exists:countries,id'],
+            'state_id' => ['required', 'exists:states,id'],
+            'DDD' => ['required', 'max:255', 'string'],
         ];
     }
 }

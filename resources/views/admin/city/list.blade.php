@@ -12,7 +12,7 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">Listagem Paises</h4>
+                                    <h4 class="card-title">Listagem Cidades</h4>
                                 </div>
                                 <div class="card-body">
                                     <div class="container">
@@ -21,7 +21,6 @@
                                             <tr>
                                                 <th width="10px">No</th>
                                                 <th>Nome</th>
-                                                <th>Sigla</th>
                                                 <th width="100px">Ação</th>
                                             </tr>
                                             </thead>
@@ -48,11 +47,10 @@
                 },
                 processing: true,
                 serverSide: true,
-                ajax: "{{ route('state.index') }}",
+                ajax: "{{ route('city.index') }}",
                 columns: [
                     {data: 'id', name: 'id'},
                     {data: 'name', name: 'name'},
-                    {data: 'acronym', name: 'acronym'},
                     {data: 'action', name: 'action', orderable: false, searchable: false},
                 ]
             });

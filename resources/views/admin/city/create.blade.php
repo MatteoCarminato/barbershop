@@ -8,18 +8,18 @@
             </div>
             <div class="content-body">
                 <section id="basic-buttons">
-                    <form method="POST" action="{{ route('state.store') }}">
+                    <form method="POST" action="{{ route('city.store') }}">
                         @csrf
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h4 class="card-title">Cadastrar Estado</h4>
+                                        <h4 class="card-title">Cadastrar Cidade</h4>
                                     </div>
                                     <div class="card-body">
                                         <div class="row">
-                                            <div class="mb-1 col-md-3">
-                                                <label class="form-label" for="name">Nome do Estado</label>
+                                            <div class="mb-1 col-md-5">
+                                                <label class="form-label" for="name">Nome da Cidade</label>
                                                 <input type="text" id="name" name="name" class="form-control"
                                                        placeholder="" aria-label="Name"
                                                        aria-describedby="name"/>
@@ -31,28 +31,29 @@
                                             </div>
 
                                             <div class="mb-1 col-md-2">
-                                                <label class="form-label" for="name">Sigla</label>
+                                                <label class="form-label" for="name">DDD</label>
                                                 <div class="input-group">
-                                                    <input type="text" id="acronym" name="acronym"
+                                                    <span class="input-group-text">+</span>
+                                                    <input type="number" id="DDD" name="DDD"
                                                            class="form-control">
                                                 </div>
-                                                @error('acronym')
+                                                @error('DDD')
                                                 <span
                                                     style="width: 100%; margin-top: 0.25rem;font-size: 0.857rem;color: #ea5455;">{{ $message }}</span>
                                                 @enderror
                                             </div>
                                             <div class="mb-1 col-md-3">
-                                                <label class="form-label" for="name">País</label>
+                                                <label class="form-label" for="name">Estado</label>
                                                 <div class="input-group">
-                                                    <input type="text" id="country_name" name="country_name"
+                                                    <input type="text" id="state_name" name="state_name"
                                                            class="form-control" readonly>
-                                                    <input type="hidden" id="country_id" name="country_id"
+                                                    <input type="hidden" id="state_id" name="state_id"
                                                            class="form-control">
                                                     <button type="button" class="input-group-text" data-bs-toggle="modal" data-bs-target="#animation">
                                                         <i data-feather='search'></i>
                                                     </button>
                                                 </div>
-                                                @error('country_id')
+                                                @error('state_id')
                                                 <span
                                                     style="width: 100%; margin-top: 0.25rem;font-size: 0.857rem;color: #ea5455;">{{ $message }}</span>
                                                 @enderror
@@ -98,26 +99,26 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @if ($countries->count() == 0)
+                                @if ($states->count() == 0)
                                     <tr>
                                         <td colspan="5">No products to display.</td>
                                     </tr>
                                 @endif
 
-                                @foreach ($countries as $country)
+                                @foreach ($states as $state)
                                     <tr>
-                                        <td>{{ $country->id }}</td>
-                                        <td>{{ $country->name }}</td>
-                                        <td class="float-end"><button class="btn btn-sm btn-danger select_country" data-value="{{$country->name}}" value="{{ $country->id}}"> Selecionar</button></td>
+                                        <td>{{ $state->id }}</td>
+                                        <td>{{ $state->name }}</td>
+                                        <td class="float-end"><button class="btn btn-sm btn-danger select_state" data-value="{{$state->name}}" value="{{ $state->id}}"> Selecionar</button></td>
                                     </tr>
                                 @endforeach
                                 </tbody>
                             </table>
 
-                            {{ $countries->links() }}
+                            {{ $states->links() }}
 
                             <p>
-                                Mostrando {{$countries->count()}} of {{ $countries->total() }} país(s).
+                                Mostrando {{$states->count()}} of {{ $states->total() }} país(s).
                             </p>
                         </div>
                     </div>
@@ -144,7 +145,7 @@
                 },
                 processing: true,
                 serverSide: true,
-                ajax: "{{ route('country.index') }}",
+                ajax: "{{ route('state.index') }}",
                 columns: [
                     {data: 'id', name: 'id'},
                     {data: 'name', name: 'name'},
@@ -153,12 +154,12 @@
         });
     </script>
     <script>
-        $(".select_country").on('click', function () {
-            let country = this.getAttribute('data-value');
-            let country_id = this.value;
+        $(".select_state").on('click', function () {
+            let state = this.getAttribute('data-value');
+            let state_id = this.value;
 
-            $('#country_name').val(country);
-            $('#country_id').val(country_id);
+            $('#state_name').val(state);
+            $('#state_id').val(state_id);
 
             var myModalEl = document.getElementById('animation');
             var modal = bootstrap.Modal.getInstance(myModalEl)

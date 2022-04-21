@@ -16,7 +16,6 @@ return new class extends Migration {
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('acronym');
-            $table->string('DDD');
             $table->unsignedBigInteger('country_id');
 
             $table->softDeletes();
