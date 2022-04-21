@@ -40,8 +40,7 @@ class StateController extends Controller
      */
     public function create()
     {
-        $countries = Country::pluck('name', 'id');
-
+        $countries = Country::paginate(5);
         return view('admin.state.create', compact('countries'));
     }
 
