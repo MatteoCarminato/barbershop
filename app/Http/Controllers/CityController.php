@@ -37,7 +37,7 @@ class CityController extends Controller
      */
     public function create(Request $request)
     {
-        $states = State::paginate(5);
+        $states = State::all();
 
         return view('admin.city.create', compact('states'));
     }
