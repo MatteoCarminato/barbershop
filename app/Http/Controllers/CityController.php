@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\City;
+use App\Models\Country;
 use App\Models\State;
 use Illuminate\Http\Request;
 use App\Http\Requests\CityStoreRequest;
@@ -38,8 +39,9 @@ class CityController extends Controller
     public function create(Request $request)
     {
         $states = State::all();
+        $countries = Country::all();
 
-        return view('admin.city.create', compact('states'));
+        return view('admin.city.create', compact('states','countries'));
     }
 
     /**
