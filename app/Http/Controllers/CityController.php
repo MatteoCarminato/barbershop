@@ -2,19 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CityStoreRequest;
+use App\Http\Requests\CityUpdateRequest;
 use App\Models\City;
 use App\Models\Country;
 use App\Models\State;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
-use App\Http\Requests\CityStoreRequest;
-use App\Http\Requests\CityUpdateRequest;
+use Illuminate\Http\Response;
 use Yajra\DataTables\DataTables;
 
 class CityController extends Controller
 {
     /**
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return Application|Factory|View
      */
     public function index(Request $request)
     {
@@ -23,7 +27,7 @@ class CityController extends Controller
             return Datatables::of($data)
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {
-                    $btn = '<a href="' . url('state') . '/' . $row->id . '" class="edit btn btn-primary btn-sm"> <i class="fas fa-search-plus"></i> Detalhes</a>';
+                    $btn = '<a href="' . url('city') . '/' . $row->id . '" class="edit btn btn-primary btn-sm"> <i class="fas fa-search-plus"></i> Detalhes</a>';
                     return $btn;
                 })
                 ->rawColumns(['action'])
@@ -33,20 +37,20 @@ class CityController extends Controller
     }
 
     /**
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return Response
      */
     public function create(Request $request)
     {
         $states = State::all();
         $countries = Country::all();
 
-        return view('admin.city.create', compact('states','countries'));
+        return view('admin.city.create', compact('states', 'countries'));
     }
 
     /**
-     * @param \App\Http\Requests\CityStoreRequest $request
-     * @return \Illuminate\Http\Response
+     * @param CityStoreRequest $request
+     * @return Response
      */
     public function store(CityStoreRequest $request)
     {
@@ -61,9 +65,9 @@ class CityController extends Controller
     }
 
     /**
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Models\City $city
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param City $city
+     * @return Response
      */
     public function show(Request $request, City $city)
     {
@@ -72,9 +76,9 @@ class CityController extends Controller
     }
 
     /**
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Models\City $city
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param City $city
+     * @return Response
      */
     public function edit(Request $request, City $city)
     {
@@ -84,9 +88,9 @@ class CityController extends Controller
     }
 
     /**
-     * @param \App\Http\Requests\CityUpdateRequest $request
-     * @param \App\Models\City $city
-     * @return \Illuminate\Http\Response
+     * @param CityUpdateRequest $request
+     * @param City $city
+     * @return Response
      */
     public function update(CityUpdateRequest $request, City $city)
     {
@@ -101,9 +105,9 @@ class CityController extends Controller
     }
 
     /**
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Models\City $city
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param City $city
+     * @return Response
      */
     public function destroy(Request $request, City $city)
     {
